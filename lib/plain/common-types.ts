@@ -176,6 +176,7 @@ import {
 } from '../entities/environment-template-installation'
 import { AppActionPlainClientAPI } from './entities/app-action'
 import { AppActionCallPlainClientAPI } from './entities/app-action-call'
+import { UIConfigPlainClientAPI } from './entities/ui-config'
 
 export type PlainClientAPI = {
   raw: {
@@ -988,13 +989,7 @@ export type PlainClientAPI = {
     ): Promise<TeamSpaceMembershipProps>
     delete(params: OptionalDefaults<GetTeamSpaceMembershipParams>): Promise<any>
   }
-  uiConfig: {
-    get(params: OptionalDefaults<GetUIConfigParams>): Promise<UIConfigProps>
-    update(
-      params: OptionalDefaults<GetUIConfigParams>,
-      rawData: UIConfigProps
-    ): Promise<UIConfigProps>
-  }
+  uiConfig: UIConfigPlainClientAPI
   userUIConfig: {
     get(params: OptionalDefaults<GetUserUIConfigParams>): Promise<UserUIConfigProps>
     update(
